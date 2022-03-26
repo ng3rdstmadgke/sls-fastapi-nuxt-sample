@@ -18,3 +18,9 @@ var/
 
 # Serverless directories
 .serverless
+
+# nodejs
+node_modules
+
+# other
+.vscode
