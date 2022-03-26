@@ -16,6 +16,10 @@ var/
 .installed.cfg
 *.egg
 
+# python
+**/__pycache__
+.venv
+
 # Serverless directories
 .serverless
 
