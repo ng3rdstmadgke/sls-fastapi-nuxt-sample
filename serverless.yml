@@ -22,6 +22,11 @@ functions:
           path: /{path+}
           method: ANY
 
+package:
+  patterns:
+    - '!**' # すべてのファイルをexclude
+    - 'api/**' # fastapiのソースコードをinclude
+
 custom:
   pythonRequirements:
     dockerizePip: true # deploy時のパッケージングの際にpythonライブラリのビルドをdockerで行う設定
