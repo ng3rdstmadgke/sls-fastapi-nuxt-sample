@@ -21,7 +21,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: process.env.API_BASE_PATH + 'favicon.ico' }
     ]
   },
 
@@ -75,5 +75,13 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+  },
+
+  generate: {
+    dir: "../front_dist"
+  },
+  router: {
+    base: process.env.API_BASE_PATH
+  },
+
 }

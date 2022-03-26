@@ -26,6 +26,7 @@ package:
   patterns:
     - '!**' # すべてのファイルをexclude
     - 'api/**' # fastapiのソースコードをinclude
+    - 'front_dist/**' # nuxtのビルド結果をinclude
 
 custom:
   pythonRequirements:

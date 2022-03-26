@@ -22,5 +22,8 @@ var/
 # nodejs
 node_modules
 
+# nuxt
+front_dist
+
 # other
 .vscode
