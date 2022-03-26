@@ -3,11 +3,29 @@ frameworkVersion: '3'
 
 provider:
   name: aws
+  region: ap-northeast-1
   runtime: python3.8
+  apiGateway:
+    binaryMediaTypes:
+      - '*/*'
 
 functions:
   hello:
     handler: handler.hello
+    layers:
+      - Ref: PythonRequirementsLambdaLayer
+    events:
+      - http:
+          path: /
+          method: ANY
+      - http:
+          path: /{path+}
+          method: ANY
+
+custom:
+  pythonRequirements:
+    dockerizePip: true # deploy時のパッケージングの際にpythonライブラリのビルドをdockerで行う設定
+    layer: true # レイヤーを作成する
 
 plugins:
   - serverless-python-requirements
