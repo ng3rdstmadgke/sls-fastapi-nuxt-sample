@@ -16,7 +16,7 @@ def event(request: Request):
         "event": request.scope["aws.event"],
     }
 
-app = FastAPI()
+app = FastAPI(root_path=os.getenv("API_BASE_PATH", ""))
 app.include_router(router, prefix="/api")
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 app.mount("/", StaticFiles(directory=f"{PROJECT_ROOT}/front_dist", html=True), name="front")

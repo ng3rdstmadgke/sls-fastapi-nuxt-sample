@@ -8,6 +8,8 @@ provider:
   apiGateway:
     binaryMediaTypes:
       - '*/*'
+  environment:
+    API_BASE_PATH: ${env:API_BASE_PATH, ""}
 
 functions:
   hello:
